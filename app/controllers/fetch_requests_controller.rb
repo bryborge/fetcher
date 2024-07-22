@@ -1,5 +1,7 @@
 # frozen_string_literal: true
 
+require_relative '../jobs/fetch_html_job'
+
 class FetchRequestsController < BaseApiController
   post '/fetch_requests' do
     params        = JSON.parse(request.body.read)
@@ -10,8 +12,7 @@ class FetchRequestsController < BaseApiController
     )
 
     if fetch_request.save
-      # TODO: Add logic to handle queuing jobs
-      # FetchHtmlJob.perform_async(fetch_request.id)
+      FetchHtmlJob.perform_async(fetch_request.id) # kick off the job
       status 201
       { id: fetch_request.id, status: fetch_request.status }.to_json
     else

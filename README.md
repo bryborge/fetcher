@@ -25,3 +25,9 @@
     ```sh
     bundle exec rackup -s puma -o 0.0.0.0 -p 5678
     ```
+
+*   Start sidekiq server
+
+    ```sh
+    bundle exec sidekiq -r ./config/environment.rb -C config/sidekiq.yml
+    ```
