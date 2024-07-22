@@ -20,14 +20,22 @@
     bundle exec rake db:migrate
     ```
 
-*   Start web server
+*   Start the web server and sidekiq via foreman
 
     ```sh
-    bundle exec rackup -s puma -o 0.0.0.0 -p 5678
+    bin/dev
     ```
 
-*   Start sidekiq server
+    Or, you may want to open up each in separate terminals.
 
-    ```sh
-    bundle exec sidekiq -r ./config/environment.rb -C config/sidekiq.yml
-    ```
+    *   Start web server
+
+        ```sh
+        bundle exec rackup -s puma -o 0.0.0.0 -p 5678
+        ```
+
+    *   Start sidekiq server
+
+        ```sh
+        bundle exec sidekiq -r ./config/environment.rb -C config/sidekiq.yml
+        ```
