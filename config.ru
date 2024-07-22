@@ -5,4 +5,4 @@ require_relative './config/environment'
 use Rack::MethodOverride
 
 # Controllers
-run ApiController
+run BaseController

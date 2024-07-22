@@ -1,6 +1,5 @@
 # Fetcher
 
-
 *   Install dependencies
 
     ```sh
