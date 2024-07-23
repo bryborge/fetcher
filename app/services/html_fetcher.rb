@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class HtmlFetcher
   def initialize(strategy)
     @strategy = strategy

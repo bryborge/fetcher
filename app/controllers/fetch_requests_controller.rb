@@ -12,7 +12,7 @@ class FetchRequestsController < BaseApiController
     )
 
     if fetch_request.save
-       # Kick off the job (defaults to NetHttpStrategy)
+      # Kick off the job (defaults to NetHttpStrategy)
       FetchHtmlJob.perform_async(fetch_request.id)
       status 201
       { id: fetch_request.id, status: fetch_request.status }.to_json

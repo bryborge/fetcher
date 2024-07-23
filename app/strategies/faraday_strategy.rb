@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require 'faraday'
 require_relative './base_strategy'
 

@@ -12,16 +12,16 @@ Bundler.require(:default, ENV['SINATRA_ENV'])
 
 # Configure logging ------------------------------------------------------------
 require 'logger'
-LOGGER = Logger.new(STDOUT)
+LOGGER = Logger.new($stdout)
 
-case environment
-when 'development'
-  LOGGER.level = Logger::DEBUG
-when 'production'
-  LOGGER.level = Logger::WARN
-else
-  LOGGER.level = Logger::INFO
-end
+LOGGER.level = case environment
+               when 'development'
+                 Logger::DEBUG
+               when 'production'
+                 Logger::WARN
+               else
+                 Logger::INFO
+               end
 
 # Load application code --------------------------------------------------------
 require_all 'app'

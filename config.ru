@@ -8,5 +8,5 @@ use Rack::MethodOverride
 
 # Add new controllers here.
 
-map ('/') { run BaseApiController }
-map ('/api/v1') { run FetchRequestsController }
+map('/') { run BaseApiController }
+map('/api/v1') { run FetchRequestsController }
