@@ -2,14 +2,13 @@
 
 # Load the environment ---------------------------------------------------------
 ENV['SINATRA_ENV'] ||= 'development'
-ENV['RACK_ENV'] ||= 'development'
+ENV['RACK_ENV']    ||= 'development'
+
+environment = ENV['RACK_ENV'] || 'development'
 
 # Load gems --------------------------------------------------------------------
 require 'bundler/setup'
 Bundler.require(:default, ENV['SINATRA_ENV'])
-
-# Load application code --------------------------------------------------------
-require_all 'app'
 
 # Configure logging ------------------------------------------------------------
 require 'logger'
@@ -23,3 +22,6 @@ when 'production'
 else
   LOGGER.level = Logger::INFO
 end
+
+# Load application code --------------------------------------------------------
+require_all 'app'

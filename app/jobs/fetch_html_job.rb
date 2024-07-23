@@ -6,7 +6,7 @@ require_relative '../services/html_fetcher'
 class FetchHtmlJob
   include Sidekiq::Job
 
-  def perform(fetch_request_id, strategy_name = 'HttpartyStrategy')
+  def perform(fetch_request_id, strategy_name = 'NetHttpStrategy')
     fetch_request  = FetchRequest.find(fetch_request_id)
     strategy_class = Object.const_get(strategy_name)
     fetcher        = HtmlFetcher.new(strategy_class.new)
