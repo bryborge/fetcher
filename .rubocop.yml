@@ -1,0 +1,8 @@
+Layout/LineLength:
+  Max: 120
+
+AllCops:
+  NewCops: disable
+  Exclude:
+    - db/migrate/*
+    - db/schema.rb
