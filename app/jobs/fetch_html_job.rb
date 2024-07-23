@@ -20,11 +20,11 @@ class FetchHtmlJob
       
       fetch_request.update(status: 'successful', storage_url: obj.public_url)
     else
-      # TODO: log error
-      fetch_request.update(status: 'failed') #, error_message: response.message)
+      LOGGER.error("Fetch failed for FetchRequest ID #{fetch_request.id}: #{result[:error]}")
+      fetch_request.update(status: 'failed')
     end
   rescue => e
-    # TODO: log error
-    fetch_request.update(status: 'failed') #, error_message: e.message)
+    LOGGER.error("Exception occurred for FetchRequest ID #{fetch_request.id}: #{e.message}")
+    fetch_request.update(status: 'failed')
   end
 end
