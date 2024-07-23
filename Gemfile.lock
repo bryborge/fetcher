@@ -40,6 +40,11 @@ GEM
     connection_pool (2.4.1)
     csv (3.3.0)
     drb (2.2.1)
+    faraday (2.10.0)
+      faraday-net_http (>= 2.0, < 3.2)
+      logger
+    faraday-net_http (3.1.0)
+      net-http
     httparty (0.22.0)
       csv
       mini_mime (>= 1.0.0)
@@ -57,6 +62,8 @@ GEM
     mustermann (3.0.0)
       ruby2_keywords (~> 0.0.1)
     mutex_m (0.2.0)
+    net-http (0.4.1)
+      uri
     nio4r (2.7.3)
     nokogiri (1.16.6-x86_64-darwin)
       racc (~> 1.4)
@@ -106,6 +113,7 @@ GEM
     timeout (0.4.1)
     tzinfo (2.0.6)
       concurrent-ruby (~> 1.0)
+    uri (0.13.0)
     webrick (1.8.1)
 
 PLATFORMS
@@ -114,6 +122,7 @@ PLATFORMS
 DEPENDENCIES
   activerecord
   aws-sdk-s3
+  faraday
   httparty
   nokogiri
   pg

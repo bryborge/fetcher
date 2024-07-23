@@ -2,6 +2,7 @@ source 'https://rubygems.org'
 
 gem 'activerecord'
 gem 'aws-sdk-s3'
+gem 'faraday'
 gem 'httparty'
 gem 'nokogiri'
 gem 'pg'
