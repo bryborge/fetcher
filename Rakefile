@@ -13,8 +13,8 @@ task :console do
   Pry.start
 end
 
-desc 'starts sidekiq'
 namespace :sidekiq do
+  desc 'starts sidekiq'
   task :work do
     Sidekiq::CLI.instance.run
   end

@@ -1,5 +1,11 @@
+require:
+  - rubocop-rake
+
 Layout/LineLength:
   Max: 120
+
+Metrics/MethodLength:
+  Max: 12
 
 AllCops:
   NewCops: disable

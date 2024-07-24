@@ -20,4 +20,5 @@ gem 'sinatra-contrib'
 group :development, :test do
   gem 'pry'
   gem 'rubocop', require: false
+  gem 'rubocop-rake', require: false
 end
