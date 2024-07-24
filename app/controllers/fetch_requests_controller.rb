@@ -2,6 +2,7 @@
 
 require_relative '../jobs/fetch_html_job'
 
+# Fetch Requests Controller
 class FetchRequestsController < BaseApiController
   post '/fetch_requests' do
     params        = JSON.parse(request.body.read)

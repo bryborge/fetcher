@@ -5,9 +5,17 @@ require 'sidekiq'
 require_relative '../models/fetch_request'
 require_relative '../services/html_fetcher'
 
+# Fetch HTML Job
+#
+# Fetches HTML from a given URL and stores it in AWS S3.
 class FetchHtmlJob
   include Sidekiq::Job
 
+  # Performs the html fetch job.
+  #
+  # @param [Integer] fetch_request_id The ID of the fetch request.
+  # @param [String] strategy_name The name of the strategy to use.
+  # @return [void]
   def perform(fetch_request_id, strategy_name = 'NetHttpStrategy')
     fetch_request  = FetchRequest.find(fetch_request_id)
     strategy_class = Object.const_get(strategy_name)
