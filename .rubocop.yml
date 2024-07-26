@@ -1,11 +1,15 @@
 require:
   - rubocop-rake
+  - rubocop-rspec
 
 Layout/LineLength:
   Max: 120
 
 Metrics/MethodLength:
   Max: 12
+
+RSpec/MultipleExpectations:
+  Enabled: false
 
 AllCops:
   NewCops: disable
