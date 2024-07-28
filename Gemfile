@@ -18,6 +18,7 @@ gem 'sinatra-activerecord'
 gem 'sinatra-contrib'
 
 group :development, :test do
+  gem 'byebug'
   gem 'pry'
   gem 'rack-test'
   gem 'rspec'

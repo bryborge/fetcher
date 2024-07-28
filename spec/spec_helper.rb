@@ -4,8 +4,14 @@ require 'rack/test'
 require 'rspec'
 require_relative '../config/environment'
 
+if ActiveRecord::Base.connection.migration_context.needs_migration?
+  raise 'Migrations are pending. Run `rake db:migrate SINATRA_ENV=test` to resolve the issue.'
+end
+
+ActiveRecord::Base.logger = nil
+
 def app
-  BaseApiController
+  Rack::Builder.parse_file('config.ru')
 end
 
 RSpec.configure do |config|

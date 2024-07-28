@@ -8,6 +8,9 @@ Layout/LineLength:
 Metrics/MethodLength:
   Max: 12
 
+RSpec/ExampleLength:
+  Enabled: false
+
 RSpec/MultipleExpectations:
   Enabled: false
 
