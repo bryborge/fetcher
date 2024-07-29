@@ -27,4 +27,5 @@ group :development, :test do
   gem 'rubocop', require: false
   gem 'rubocop-rake', require: false
   gem 'rubocop-rspec', require: false
+  gem 'simplecov', require: false
 end
