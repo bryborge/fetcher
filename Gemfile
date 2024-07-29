@@ -18,7 +18,7 @@ gem 'sinatra', require: 'sinatra/base'
 gem 'sinatra-activerecord'
 gem 'sinatra-contrib'
 
-group :development, :test do
+group :test do
   gem 'byebug'
   gem 'pry'
   gem 'rack-test'
