@@ -1,6 +1,9 @@
 # frozen_string_literal: true
 
 # Load the environment ---------------------------------------------------------
+require 'dotenv'
+Dotenv.load
+
 ENV['SINATRA_ENV'] ||= 'development'
 ENV['RACK_ENV']    ||= 'development'
 
