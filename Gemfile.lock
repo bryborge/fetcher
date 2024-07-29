@@ -42,6 +42,7 @@ GEM
     connection_pool (2.4.1)
     csv (3.3.0)
     diff-lcs (1.5.1)
+    dotenv (3.1.2)
     drb (2.2.1)
     faraday (2.10.0)
       faraday-net_http (>= 2.0, < 3.2)
@@ -114,6 +115,11 @@ GEM
     rspec-mocks (3.13.1)
       diff-lcs (>= 1.2.0, < 2.0)
       rspec-support (~> 3.13.0)
+    rspec-sidekiq (5.0.0)
+      rspec-core (~> 3.0)
+      rspec-expectations (~> 3.0)
+      rspec-mocks (~> 3.0)
+      sidekiq (>= 5, < 8)
     rspec-support (3.13.1)
     rubocop (1.65.0)
       json (~> 2.3)
@@ -171,6 +177,7 @@ DEPENDENCIES
   activerecord
   aws-sdk-s3
   byebug
+  dotenv
   faraday
   httparty
   nokogiri
@@ -182,6 +189,7 @@ DEPENDENCIES
   rake
   require_all
   rspec
+  rspec-sidekiq
   rubocop
   rubocop-rake
   rubocop-rspec

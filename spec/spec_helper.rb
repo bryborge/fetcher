@@ -1,7 +1,12 @@
 # frozen_string_literal: true
 
+require 'dotenv'
+Dotenv.load
+
 require 'rack/test'
 require 'rspec'
+require 'rspec-sidekiq'
+require 'sidekiq/testing'
 require_relative '../config/environment'
 
 if ActiveRecord::Base.connection.migration_context.needs_migration?
@@ -14,7 +19,15 @@ def app
   Rack::Builder.parse_file('config.ru')
 end
 
+RSpec::Sidekiq.configure do |config|
+  config.warn_when_jobs_not_processed_by_sidekiq = false
+end
+
 RSpec.configure do |config|
+  config.before do
+    Sidekiq::Worker.clear_all
+  end
+
   config.include Rack::Test::Methods
   config.run_all_when_everything_filtered = true
 
